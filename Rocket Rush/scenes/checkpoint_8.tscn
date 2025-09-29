@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://dysgyj65k0m7l"]
+
+[ext_resource type="Script" uid="uid://cbc1yjg8p705k" path="res://scripts/checkpoint_8.gd" id="1_o2r3p"]
+[ext_resource type="Texture2D" uid="uid://cevbf5oqrug83" path="res://assets/Gemini_Generated_Image_52oqis52oqis52oq (1) - Copy.png" id="2_qxuwb"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3g5sa"]
+radius = 178.0
+height = 754.0
+
+[node name="Area2D" type="Area2D"]
+script = ExtResource("1_o2r3p")
+last_checkpoint = false
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_qxuwb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-59, 13)
+shape = SubResource("CapsuleShape2D_3g5sa")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
