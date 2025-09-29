@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://gr3cjkf47t27"]
+
+[ext_resource type="AudioStream" uid="uid://c8k7e24caopc2" path="res://assets/8-bit-retro-game-music-233964.mp3" id="1_yvkaf"]
+
+[node name="MusicPlayer" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_yvkaf")
+volume_db = -20.0
+autoplay = true
+max_distance = 50000.0
