@@ -1,0 +1,119 @@
+[gd_scene load_steps=10 format=3 uid="uid://dcnkxla6kmk4p"]
+
+[ext_resource type="Script" uid="uid://dkohdfbggyn1y" path="res://scripts/kill_screen_scene.gd" id="1_ooshj"]
+[ext_resource type="Texture2D" uid="uid://cfqghdf5n111o" path="res://assets/Gemini_Generated_Image_uykh45uykh45uykh.png" id="2_2makt"]
+[ext_resource type="Script" uid="uid://crrstre84u5mh" path="res://scripts/kill_screen.gd" id="2_ooshj"]
+[ext_resource type="FontFile" uid="uid://dkis7gi181gc8" path="res://assets/pixelpurl/PixelPurl.ttf" id="4_2makt"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ooshj"]
+texture = ExtResource("2_2makt")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8tnmo"]
+bg_color = Color(0.2784314, 0.16078432, 0.76862746, 1)
+shadow_size = 5
+shadow_offset = Vector2(0, 5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_syvep"]
+bg_color = Color(0.57961917, 0.8709713, 0.98535365, 1)
+shadow_size = 5
+shadow_offset = Vector2(0, 5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l2bgj"]
+bg_color = Color(0.36078432, 0.7921569, 0.9529412, 1)
+shadow_size = 5
+shadow_offset = Vector2(0, 5)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_syvep"]
+
+[node name="kill_screen_scene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ooshj")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.010000001
+anchor_right = 1.01
+anchor_bottom = 1.014
+offset_left = 0.020000458
+offset_top = -8.75
+offset_right = -0.020019531
+offset_bottom = -0.32202148
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_ooshj")
+script = ExtResource("2_ooshj")
+
+[node name="Score" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -129.0
+offset_top = 58.75
+offset_right = 137.0
+offset_bottom = 135.75
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.92156863, 0.08627451, 0.4392157, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_2makt")
+theme_override_font_sizes/font_size = 80
+text = "Score "
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -205.0
+offset_top = -79.0
+offset_right = 205.0
+offset_bottom = 79.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+
+[node name="Button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.92156863, 0.09411765, 0.44313726, 1)
+theme_override_colors/font_focus_color = Color(0.92156863, 0.09019608, 0.44313726, 1)
+theme_override_colors/font_pressed_color = Color(0.8901961, 0.07058824, 0.43137255, 1)
+theme_override_colors/font_hover_color = Color(0.91764706, 0.08627451, 0.44313726, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.92156863, 0.09411765, 0.44313726, 1)
+theme_override_constants/h_separation = 10
+theme_override_fonts/font = ExtResource("4_2makt")
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxFlat_8tnmo")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_syvep")
+theme_override_styles/hover = SubResource("StyleBoxFlat_l2bgj")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_syvep")
+text = "Restart Game"
+
+[node name="Button3" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.92156863, 0.09411765, 0.44313726, 1)
+theme_override_colors/font_focus_color = Color(0.92156863, 0.08627451, 0.44705883, 1)
+theme_override_colors/font_pressed_color = Color(0.90588236, 0.08627451, 0.4392157, 1)
+theme_override_colors/font_hover_color = Color(0.8745098, 0.07058824, 0.42352942, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.92941177, 0.08627451, 0.44313726, 1)
+theme_override_constants/h_separation = 10
+theme_override_fonts/font = ExtResource("4_2makt")
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxFlat_8tnmo")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_syvep")
+theme_override_styles/hover = SubResource("StyleBoxFlat_l2bgj")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_syvep")
+text = "Exit"
+
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button3" to="." method="_on_exit_pressed"]
